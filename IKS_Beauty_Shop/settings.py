@@ -20,10 +20,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '9cc476a3-5bda-454e-8b5c-5111710b287e'
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['localhost','127.0.0.1', '.pythonanywhere.com']
 
@@ -81,9 +81,6 @@ WSGI_APPLICATION = 'IKS_Beauty_Shop.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': '0w0m0h0_question',
-        'USER': '0w0m0h0_itluser',
-        'PASSWORD': 'ITL14th',
         'HOST': 'localhost',
         #'HOST': 'sv4.php.starfree.ne.jp',
         #'PORT': '3306',
@@ -137,11 +134,6 @@ STATICFILES_DIRS = (
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 # メールサーバーへの接続設定
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_HOST_USER = 'iks.test.beauty@gmail.com'
-EMAIL_HOST_PASSWORD = 'iks.2021'
-EMAIL_USE_TLS = True
 
 #EMAIL_HOST = 'smtp.gmail.com'
 #EMAIL_PORT = 587
