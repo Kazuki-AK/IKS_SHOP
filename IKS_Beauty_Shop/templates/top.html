@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}
+	トップページ
+{% endblock %}
+
+{% block content %}
+	{% if request.user.is_authenticated %}
+		<br>
+		ようこそ【{{ shop }}】{{ user.last_name_manager }}様！<br>
+		<br>
+		各フォームよりデータをご確認・ご編集ください。<br>
+		<br>
+		<br>
+	{% else %}
+		<br>
+		ようこそお客様！<br>
+		<br>
+		ログインしてデータをご確認・ご編集ください。<br>
+		<br>
+		<br>	
+	{% endif %}
+{% endblock %}

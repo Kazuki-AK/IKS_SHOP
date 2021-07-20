@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+
+{% block title %}
+	登録情報確認ページ
+{% endblock %}
+
+{% block content %}
+<table class="table">
+    <tbody>
+		<tr>
+            <th>店名</th>
+            <td>{{ shop.shop_name }}</td>
+        </tr>
+        <tr>
+            <th>管理者</th>
+            <td>{{ shop.manager_name }}</td>	
+        </tr>
+		<tr>
+            <th>お客様用メールアドレス</th>
+            <td>{{ shop.email }}</td>	
+        </tr>
+        <tr>
+            <th>電話番号</th>
+            <td>{{ shop.tel_shop }}</td>	
+        </tr>
+		<tr>
+            <th>サイトURL</th>
+            <td>{{ shop.website }}</td>	
+        </tr>
+        <tr>
+            <th>郵便番号</th>
+            <td>{{ shop.zip_code }}</td>	
+        </tr>
+        <tr>
+            <th>都道府県</th>
+            <td>{{ shop.address1 }}</td>	
+        </tr>
+        <tr>
+            <th>市区町村</th>
+            <td>{{ shop.address2 }}</td>	
+        </tr>
+        <tr>
+            <th>丁目</th>
+            <td>{{ shop.address3 }}</td>	
+        </tr>
+        <tr>
+            <th>番地以降</th>
+            <td>{{ shop.address4 }}</td>	
+        </tr>
+        <tr>
+            <th>建物名・部屋番号等</th>
+            <td>{{ shop.address5 }}</td>	
+        </tr>
+		<tr>
+			<th>付近の駅・バス停１</th>
+            <td>{{ shop.station1 }}</td>
+        </tr>
+		<tr>
+			<th>駅・バス停１からの所要時間</th>
+            <td>{{ shop.station1_time }}</td>
+        </tr>
+		<tr>
+			<th>付近の駅・バス停２</th>
+            <td>{{ shop.station2 }}</td>
+        </tr>
+		<tr>
+			<th>駅・バス停２からの所要時間</th>
+            <td>{{ shop.station2_time }}</td>
+        </tr>
+		<tr>
+			<th>付近の駅・バス停３</th>
+            <td>{{ shop.station3 }}</td>
+        </tr>
+		<tr>
+			<th>駅・バス停３からの所要時間</th>
+            <td>{{ shop.station3_time }}</td>
+        </tr>
+		<tr>
+			<th>基本料金</th>
+            <td>{{ shop.price_basic }}</td>
+        </tr>
+		<tr>
+			<th>車イス対応</th>
+            <td>{{ shop.wheelchair }}</td>
+        </tr>
+		<tr>
+			<th>視覚障碍対応</th>
+            <td>{{ shop.visually }}</td>
+        </tr>
+		<tr>
+			<th>聴覚障碍対応</th>
+            <td>{{ shop.hearing }}</td>
+        </tr>
+		<tr>
+			<th>備考</th>
+            <td>{{ shop.remarks_shop }}</td>
+        </tr>
+    </tbody>
+        <tbody>
+            {% for field in form %}
+                <tr>
+                    <th><label for="{{ field.id_for_label }}">{{ field.label }}</label></th>
+                    <td>{{ field }} {{ field.errors }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>	
+</table>
+{% endblock %}

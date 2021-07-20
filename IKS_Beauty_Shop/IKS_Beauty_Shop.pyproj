@@ -1,0 +1,180 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <Name>IKS_Beauty_Shop</Name>
+    <RootNamespace>IKS_Beauty_Shop</RootNamespace>
+    <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
+    <TestFramework>Pytest</TestFramework>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>126819d3-12ac-4dd6-ad5b-a3829cd3c13f</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <ProjectTypeGuids>{5F0BE9CA-D677-4A4D-8806-6076C0FAAD37};{349c5851-65df-11da-9384-00065b846f21};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <StartupFile>manage.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <LaunchProvider>Django launcher</LaunchProvider>
+    <DjangoSettingsModule>IKS_Beauty_Shop.settings</DjangoSettingsModule>
+    <WebBrowserUrl>http://localhost</WebBrowserUrl>
+    <OutputPath>.</OutputPath>
+    <SuppressCollectPythonCloudServiceFiles>true</SuppressCollectPythonCloudServiceFiles>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="manage.py" />
+    <Compile Include="IKS_Beauty_Shop\__init__.py" />
+    <Compile Include="IKS_Beauty_Shop\settings.py" />
+    <Compile Include="IKS_Beauty_Shop\urls.py" />
+    <Compile Include="IKS_Beauty_Shop\wsgi.py" />
+    <Compile Include="Shop\admin.py" />
+    <Compile Include="Shop\apps.py" />
+    <Compile Include="Shop\migrations\__init__.py" />
+    <Compile Include="Shop\models.py" />
+    <Compile Include="Shop\tests.py" />
+    <Compile Include="Shop\urls.py" />
+    <Compile Include="Shop\views.py" />
+    <Compile Include="Shop\__init__.py" />
+    <Compile Include="Top\admin.py" />
+    <Compile Include="Top\apps.py" />
+    <Compile Include="Top\migrations\__init__.py" />
+    <Compile Include="Top\models.py" />
+    <Compile Include="Top\tests.py" />
+    <Compile Include="Top\urls.py" />
+    <Compile Include="Top\views.py" />
+    <Compile Include="Top\__init__.py" />
+    <Compile Include="UserLogin\admin.py" />
+    <Compile Include="UserLogin\apps.py" />
+    <Compile Include="UserLogin\forms.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UserLogin\migrations\__init__.py" />
+    <Compile Include="UserLogin\models.py" />
+    <Compile Include="UserLogin\tests.py" />
+    <Compile Include="UserLogin\urls.py" />
+    <Compile Include="UserLogin\views.py" />
+    <Compile Include="UserLogin\__init__.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="requirements.txt" />
+    <Content Include="Shop\migrations\__pycache__\__init__.cpython-37.pyc" />
+    <Content Include="Shop\templates\Shop\index.html" />
+    <Content Include="Shop\__pycache__\admin.cpython-37.pyc" />
+    <Content Include="Shop\__pycache__\apps.cpython-37.pyc" />
+    <Content Include="Shop\__pycache__\models.cpython-37.pyc" />
+    <Content Include="Shop\__pycache__\urls.cpython-37.pyc" />
+    <Content Include="Shop\__pycache__\views.cpython-37.pyc" />
+    <Content Include="Shop\__pycache__\__init__.cpython-37.pyc" />
+    <Content Include="static\CSS\style.css" />
+    <Content Include="static\JS\check_transition.js" />
+    <Content Include="templates\login.html" />
+    <Content Include="templates\search.html" />
+    <Content Include="templates\shop.html" />
+    <Content Include="templates\shop_manage.html" />
+    <Content Include="templates\signup.html" />
+    <Content Include="templates\top.html" />
+    <Content Include="Top\migrations\__pycache__\__init__.cpython-37.pyc" />
+    <Content Include="Top\templates\Top\index.html" />
+    <Content Include="Top\__pycache__\admin.cpython-37.pyc" />
+    <Content Include="Top\__pycache__\apps.cpython-37.pyc" />
+    <Content Include="Top\__pycache__\models.cpython-37.pyc" />
+    <Content Include="Top\__pycache__\urls.cpython-37.pyc" />
+    <Content Include="Top\__pycache__\views.cpython-37.pyc" />
+    <Content Include="Top\__pycache__\__init__.cpython-37.pyc" />
+    <Content Include="UserLogin\migrations\__pycache__\__init__.cpython-37.pyc" />
+    <Content Include="UserLogin\templates\UserLogin\index.html" />
+    <Content Include="UserLogin\__pycache__\admin.cpython-37.pyc" />
+    <Content Include="UserLogin\__pycache__\apps.cpython-37.pyc" />
+    <Content Include="UserLogin\__pycache__\models.cpython-37.pyc" />
+    <Content Include="UserLogin\__pycache__\urls.cpython-37.pyc" />
+    <Content Include="UserLogin\__pycache__\views.cpython-37.pyc" />
+    <Content Include="UserLogin\__pycache__\__init__.cpython-37.pyc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="IKS_Beauty_Shop\" />
+    <Folder Include="Shop\" />
+    <Folder Include="Shop\migrations\" />
+    <Folder Include="Shop\migrations\__pycache__\" />
+    <Folder Include="Shop\templates\" />
+    <Folder Include="Shop\templates\Shop\" />
+    <Folder Include="Shop\__pycache__\" />
+    <Folder Include="static\" />
+    <Folder Include="static\CSS\" />
+    <Folder Include="static\img\" />
+    <Folder Include="static\JS\" />
+    <Folder Include="templates\" />
+    <Folder Include="Top\" />
+    <Folder Include="Top\migrations\" />
+    <Folder Include="Top\migrations\__pycache__\" />
+    <Folder Include="Top\templates\" />
+    <Folder Include="Top\templates\Top\" />
+    <Folder Include="Top\__pycache__\" />
+    <Folder Include="UserLogin\" />
+    <Folder Include="UserLogin\migrations\" />
+    <Folder Include="UserLogin\migrations\__pycache__\" />
+    <Folder Include="UserLogin\templates\" />
+    <Folder Include="UserLogin\templates\registration\" />
+    <Folder Include="UserLogin\templates\UserLogin\" />
+    <Folder Include="UserLogin\__pycache__\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Interpreter Include="env\">
+      <Id>env</Id>
+      <Version>3.7</Version>
+      <Description>env (Python 3.7 (64-bit))</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X64</Architecture>
+    </Interpreter>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Django.targets" />
+  <!-- Specify pre- and post-build commands in the BeforeBuild and 
+       AfterBuild targets below. -->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <AutoAssignPort>True</AutoAssignPort>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

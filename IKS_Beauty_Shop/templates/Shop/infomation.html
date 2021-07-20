@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block title %}
+	トップページ
+{% endblock %}
+
+{% block content %}
+	{% if request.user.is_authenticated %}
+		<br>
+		<h2><span>{{ shop.shop_name }}</span></h2>
+		<h5>営業時間</h5>
+		<p>
+			{% if not shop.is_holiday_sunday %}
+			日曜日:{{ shop.get_time_open_sunday1_display }} ～ {{ shop.get_time_close_sunday1_display }}，{{ shop.get_time_open_sunday2_display }} ～ {{ shop.get_time_close_sunday2_display }}<br>
+			{% endif %}
+			
+			休業日:
+			{% if shop.is_holiday_sunday %}
+				日曜日 
+			{% endif %} 
+			{% if shop.is_holiday_monday %}
+				月曜日 
+			{% endif %} 
+			{% if shop.is_holiday_tuesday %}
+				火曜日 
+			{% endif %} 
+			{% if shop.is_holiday_wednesday %}
+				水曜日 
+			{% endif %} 
+			{% if shop.is_holiday_thursday %}
+				木曜日 
+			{% endif %} 
+			{% if shop.is_holiday_friday %}
+				金曜日 
+			{% endif %} 
+			{% if shop.is_holiday_saturday %}
+				土曜日
+			{% endif %} 
+			{% if not shop.is_holiday_sunday %}
+				{% if not shop.is_holiday_monday %}
+						{% if not shop.is_holiday_tuesday %}
+							{% if not shop.is_holiday_wednesday %}
+								{% if not shop.is_holiday_thursday %}
+									{% if not shop.is_holiday_friday %}
+										{% if not shop.is_holiday_saturday %}
+											なし
+										{% endif %}
+									{% endif %}
+								{% endif %}
+							{% endif %}			
+						{% endif %}
+				{% endif %}			
+			{% endif %} <br>
+			
+		</p>
+		
+		<h5>サービス内容</h5>
+		<p>
+		　基本料金：{{ shop.price_basic }}円
+		</p>
+		
+		<h5>アクセス</h5>
+		<p>
+		　〒{{ shop.zip_code }}<br>
+		 　　{{ shop.address1 }}{{ shop.address2 }}{{ shop.address3 }}{{ shop.address4 }}{{ shop.address5 }}
+		</P>
+		
+		<h5>窓口</h5>
+		<p>	
+		　担当者：{{ shop.manager_name }}<br>
+		　Webサイト：{{ shop.website }}<br>
+		　TEL：{{ shop.tel_shop }}<br>
+		　メール：{{ shop.tel_email }}<br>
+		</p>
+	{% endif %}	
+{% endblock %}

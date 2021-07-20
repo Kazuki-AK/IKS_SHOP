@@ -1,0 +1,11 @@
+{{ user.username }} 様
+
+弊サイトにご登録のメールアドレスを
+変更する手続きのためのメールです。
+
+下記URLよりサイトにアクセスすると、メールアドレスの変更が完了します。
+
+確認用URL
+{{ protocol}}://{{ domain }}{% url 'register:email_change_complete' token %}
+
+※お心当たりが無い場合はご連絡を頂戴できれば幸いです。

@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+
+{% block title %}
+	登録情報確認ページ
+{% endblock %}
+
+{% block content %}
+<table class="table">
+    <tbody>
+		<tr>
+            <th>休業日</th>
+            <td>
+			{% if shop.is_holiday_sunday %}
+				日曜日<br>
+			{% endif %} 
+			{% if shop.is_holiday_monday %}
+				月曜日<br>
+			{% endif %} 
+			{% if shop.is_holiday_tuesday %}
+				火曜日<br>
+			{% endif %} 
+			{% if shop.is_holiday_wednesday %}
+				水曜日<br>
+			{% endif %} 
+			{% if shop.is_holiday_thursday %}
+				木曜日<br>
+			{% endif %} 
+			{% if shop.is_holiday_friday %}
+				金曜日<br>
+			{% endif %} 
+			{% if shop.is_holiday_saturday %}
+				土曜日<br>
+			{% endif %} 
+			{% if not shop.is_holiday_sunday %}
+				{% if not shop.is_holiday_monday %}
+						{% if not shop.is_holiday_tuesday %}
+							{% if not shop.is_holiday_wednesday %}
+								{% if not shop.is_holiday_thursday %}
+									{% if not shop.is_holiday_friday %}
+										{% if not shop.is_holiday_saturday %}
+											なし<br>
+										{% endif %}
+									{% endif %}
+								{% endif %}
+							{% endif %}			
+						{% endif %}
+				{% endif %}			
+			{% endif %} 
+			</td>
+        </tr>
+		{% if not shop.is_holiday_sunday %}
+		<tr>
+			<th>日曜日</th>
+            <td>【時間１】{{ shop.get_time_open_sunday1_display }} ～ {{ shop.get_time_close_sunday1_display }}<br>
+				【時間２】{{ shop.get_time_open_sunday2_display }} ～ {{ shop.get_time_close_sunday2_display }}</td>
+        </tr>
+		{% endif %} 
+		{% if not shop.is_holiday_monday %}
+		<tr>
+			<th>月曜日</th>
+            <td>【時間１】{{ shop.get_time_open_monday1_display }} ～ {{ shop.get_time_close_monday1_display }}<br>
+				【時間２】{{ shop.get_time_open_monday2_display }} ～ {{ shop.get_time_close_monday2_display }}</td>
+        </tr>
+		{% endif %} 
+		{% if not shop.is_holiday_tuesday %}
+		<tr>
+			<th>火曜日</th>
+            <td>【時間１】{{ shop.get_time_open_tuesday1_display }} ～ {{ shop.get_time_close_tuesday1_display }}<br>
+				【時間２】{{ shop.get_time_open_tuesday2_display }} ～ {{ shop.get_time_close_tuesday2_display }}</td>
+        </tr>
+		{% endif %} 
+		{% if not shop.is_holiday_wednesday %}
+		<tr>
+			<th>水曜日</th>
+            <td>【時間１】{{ shop.get_time_open_wednesday1_display }} ～ {{ shop.get_time_close_wednesday1_display }}<br>
+				【時間２】{{ shop.get_time_open_wednesday2_display }} ～ {{ shop.get_time_close_wednesday2_display }}</td>
+        </tr>
+		{% endif %} 
+		{% if not shop.is_holiday_thursday %}
+		<tr>
+			<th>木曜日</th>
+            <td>【時間１】{{ shop.get_time_open_thursday1_display }} ～ {{ shop.get_time_close_thursday1_display }}<br>
+				【時間２】{{ shop.get_time_open_thursday2_display }} ～ {{ shop.get_time_close_thursday2_display }}</td>
+        </tr>
+		{% endif %} 
+		{% if not shop.is_holiday_friday %}
+		<tr>
+			<th>金曜日</th>
+            <td>【時間１】{{ shop.get_time_open_friday1_display }} ～ {{ shop.get_time_close_friday1_display }}<br>
+				【時間２】{{ shop.get_time_open_friday2_display }} ～ {{ shop.get_time_close_friday2_display }}</td>
+        </tr>
+		{% endif %} 
+		{% if not shop.is_holiday_saturday %}
+		<tr>
+			<th>土曜日</th>
+            <td>【時間１】{{ shop.get_time_open_saturday1_display }} ～ {{ shop.get_time_close_saturday1_display }}<br>
+				【時間２】{{ shop.get_time_open_saturday2_display }} ～ {{ shop.get_time_close_saturday2_display }}</td>
+        </tr>
+		{% endif %} 
+    </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}
+	登録情報確認ページ
+{% endblock %}
+
+{% block content %}
+<table class="table">
+    <tbody>
+		<tr>
+            <th>店名</th>
+            <td>{{ shop }}</td>
+        </tr>
+        <tr>
+            <th>管理用アカウント</th>
+            <td>{{ user.email }}</td>
+        </tr>
+        <tr>
+            <th>代表者「姓」</th>
+            <td>{{ user.last_name_representative }}</td>
+        </tr>
+        <tr>
+            <th>代表者「名」</th>
+            <td>{{ user.first_name_representative }}</td>
+        </tr>
+            <th>管理者「姓」</th>
+            <td>{{ user.last_name_manager }}</td>
+        </tr>
+        <tr>
+            <th>管理者「名」</th>
+            <td>{{ user.first_name_manager }}</td>
+        </tr>
+		<tr>
+            <th>電話番号</th>
+            <td>{{ user.tel }}</td>
+        </tr>
+		<tr>
+            <th>備考</th>
+            <td>{{ user.remarks }}</td>
+        </tr>
+    </tbody>
+</table>
+{% endblock %}

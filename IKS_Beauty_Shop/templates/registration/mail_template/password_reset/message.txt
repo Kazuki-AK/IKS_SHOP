@@ -1,0 +1,12 @@
+{{ user.username }} 様
+
+弊サイトにご登録のパスワードを
+お忘れになられたとのお問い合わせへのご対応メールです。
+
+下記URLよりサイトにアクセスの上、
+パスワードの再設定を行ってください。
+
+再設定用URL
+{{ protocol}}://{{ domain }}{% url 'UserLogin:password_reset_confirm' uid token %}
+
+※お心当たりが無い場合はご連絡を頂戴できれば幸いです。

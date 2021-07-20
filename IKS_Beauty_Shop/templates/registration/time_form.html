@@ -1,0 +1,145 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+	営業時間情報変更ページ
+{% endblock %}
+
+{% block content %}
+<p>休業日をチェック状態にしてください。</p>
+<form action="" method="POST">
+    {{ form.non_field_errors }}
+    <table class="table">
+        <tbody> 
+            {% for field in form %}
+                <tr class="{{ field.help_text }}">
+                    <th><label for="{{ field.id_for_label }}" class="{{ field.help_text }}">{{ field.label }}</label></th>
+                    <td>{{ field }} {{ field.errors }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% csrf_token %}
+    <button type="submit" class="btn btn-success btn-lg" onclick="funcRem()">送信</button>
+	
+<script>
+	//チェックボックスで時間帯ON・OFF切り替え
+	var is_check_sunday = document.getElementById('id_is_holiday_sunday');
+	var sunday = document.getElementsByClassName('sunday');
+
+	var is_check_monday = document.getElementById('id_is_holiday_monday');
+	var monday = document.getElementsByClassName('monday');
+
+	var is_check_tuesday = document.getElementById('id_is_holiday_tuesday');
+	var tuesday = document.getElementsByClassName('tuesday');
+
+	var is_check_wednesday = document.getElementById('id_is_holiday_wednesday');
+	var wednesday = document.getElementsByClassName('wednesday');
+
+	var is_check_thursday = document.getElementById('id_is_holiday_thursday');
+	var thursday = document.getElementsByClassName('thursday');
+
+	var is_check_friday = document.getElementById('id_is_holiday_friday');
+	var friday = document.getElementsByClassName('friday');
+
+	var is_check_saturday = document.getElementById('id_is_holiday_saturday');
+	var saturday = document.getElementsByClassName('saturday');
+
+
+	function view_check(){
+		if( is_check_sunday.checked ){
+			for (let i = 0; i < sunday.length; i++) {
+				sunday[i].style.visibility = 'collapse';
+			}
+		}else{
+			for (let i = 0; i < sunday.length; i++) {
+				sunday[i].style.visibility = 'visible';
+			}
+		}
+
+		if( is_check_monday.checked ){
+			for (let i = 0; i < monday.length; i++) {
+				monday[i].style.visibility = 'collapse';
+			}
+		}else{
+			for (let i = 0; i < monday.length; i++) {
+				monday[i].style.visibility = 'visible';
+			}
+		}
+
+		if( is_check_tuesday.checked ){
+			for (let i = 0; i < tuesday.length; i++) {
+				tuesday[i].style.visibility = 'collapse';
+			}
+		}else{
+			for (let i = 0; i < tuesday.length; i++) {
+				tuesday[i].style.visibility = 'visible';
+			}
+		}
+
+		if( is_check_wednesday.checked ){
+			for (let i = 0; i < wednesday.length; i++) {
+				wednesday[i].style.visibility = 'collapse';
+			}
+		}else{
+			for (let i = 0; i < wednesday.length; i++) {
+				wednesday[i].style.visibility = 'visible';
+			}
+		}
+
+		if( is_check_thursday.checked ){
+			for (let i = 0; i < thursday.length; i++) {
+				thursday[i].style.visibility = 'collapse';
+			}
+		}else{
+			for (let i = 0; i < thursday.length; i++) {
+				thursday[i].style.visibility = 'visible';
+			}
+		}
+
+		if( is_check_friday.checked ){
+			for (let i = 0; i < friday.length; i++) {
+				friday[i].style.visibility = 'collapse';
+			}
+		}else{
+			for (let i = 0; i < friday.length; i++) {
+				friday[i].style.visibility = 'visible';
+			}
+		}
+
+		if( is_check_saturday.checked ){
+			for (let i = 0; i < saturday.length; i++) {
+				saturday[i].style.visibility = 'collapse';
+			}
+		}else{
+			for (let i = 0; i < saturday.length; i++) {
+				saturday[i].style.visibility = 'visible';
+			}
+		}
+	}
+
+	window.addEventListener('load', view_check);
+	is_check_sunday.onchange = view_check;
+	is_check_monday.onchange = view_check;
+	is_check_tuesday.onchange = view_check;
+	is_check_wednesday.onchange = view_check;
+	is_check_thursday.onchange = view_check;
+	is_check_friday.onchange = view_check;
+	is_check_saturday.onchange = view_check;
+
+	//ページ移動確認
+	function beforeUnload(event){
+		event.preventDefault();
+		event.returnValue = 'ページを移動します';
+	}
+		
+	window.addEventListener('beforeunload', beforeUnload);
+
+	function funcRem() {
+		window.removeEventListener('beforeunload', beforeUnload);
+	}
+
+</script>
+</form>
+
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}
+	ユーザー登録完了
+{% endblock %}
+
+{% block content %}
+<p>
+    本登録が完了しました。<br>
+    登録されたメールアドレスとパスワードでログインしてください。<br>
+    <a class="btn btn-primary btn-lg" href="{% url 'UserLogin:login' %}">ログイン</a>
+</p>
+{% endblock %}
